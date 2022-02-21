@@ -19,24 +19,23 @@ Semantic IDE»
 
 ### Навыки, используемые в работе
 Мобильные приложения -> **Dart/Flutter**  
-Веб-приложения и веб-сервисы -> **C#/ASP.NET**
+Веб-приложения и веб-сервисы -> **C#/ASP.NET/Blazor**
 
 ### Прочие навыки
-- Python, OpenCV, SpaCy, TensorFlow
-- Java 8/Android (Retrofit 2, JavaRX)
-- SQL, MySQL, MongoDB
-- HTML, CSS (SCSS, LESS)
-- PHP
-- JS, JQuery
-- Bootstrap
-- Git, Gihub, Github Actions, CI/CD
 - Design patterns, BloC, MVC, MVP, MVVM
+- SQL, MySQL, MSSQL, MongoDB
+- Java 8/Android (Retrofit 2, JavaRX)
+- HTML, CSS (SCSS, LESS), Bootstrap
+- Python, PHP, JS, JQuery
+- Git, Gihub, Github Actions, CI/CD
 
 ### Моя работа
-- 09.2021 - н.в.: **Adeptik**  
+- 09.2021 - н.в.: **«Adeptik»**  
 [СНАРЯД | APS](https://adeptik.com/snaryad-aps/) - Система оптимизационного планирования для производства
-- 03.2021 - н.в.: **Secret Company** :)  
-Мобильное приложение для сервисной компании
+
+### Фриланс
+- **«SC Sreda»** - мобильное приложение для сервисной компании
+- **«Kupol»** - мобильное приложение для частной охранной организации
 
 ### Участие в хакатонах
 - 12.2021 - Цифровой прорыв Финал (10 место)
