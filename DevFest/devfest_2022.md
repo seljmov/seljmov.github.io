@@ -1,7 +1,14 @@
-# Пан или пропал: выжимаем из вуза максимум или уходим никем
+# DevFest 2022 & IITiK Fest 2023
 
-Привет! Я [Загидин Селимов](https://seljmov.github.io), а этот файл - это выжимка с моего доклада на GDG DevFest Astrakhan 2022.  
+Привет! Я [Загидин Селимов](https://seljmov.github.io), а этот файл -  выжимка с моих докладов на
+- GDG DevFest Astrakhan 2022, тема "Пан или пропал: выжимаем из вуза максимум или уходим никем".
+- IITiK Fest 2023, тема "Хакатоны и мероприятия: как получить максимальную пользу"
+
+[Ссылка на мое выступление](https://www.youtube.com/watch?v=k8aP3n8gi4c&t) на DevFest 2022.
+
 Если вы были на докладе и хотели тут получить информацию, которой тут нет, то пишите мне в [telegram](seljmov.t.me), и я обязательно дополню документ.
+
+Мой [телеграм канал](https://t.me/seljmov_dev),  в котором я делюсь опытом, рассказываю о стажировках, форумах и хакатонах, рассуждаю и оформляю записки.
 
 ## Содержание 
 
@@ -66,15 +73,14 @@
 
 ## <a name="events"></a>Мероприятия
 
-Открытые на 03.12.2022г
-- [Зимняя школа по компьютерным наукам в ВШЭ](https://www.hse.ru/winter/cs-2023/?roistat_visit=5928323)
-- [Машинное обучение: No-code кластеризация текстов» от Финтех Хаба и ПАО "ВТБ](https://nlp.fintechhub.ru)
-
 Где еще можно посмотреть?
+- [Наука ИИТиК](https://vk.com/science_iitik)
 - [GDG Astrakhan в VK](https://vk.com/gdgastra)
 - [Академия Яндекса](https://academy.yandex.ru)
 - [Университет Сириус](https://siriusuniversity.ru/education/educational-modules-and-activities?open=8&programs=12&archive=12#12)
 - [Канал с хакатонами](https://t.me/codenrock_support)
+- [Олимпиада студентов «Я — профессионал»](https://vk.com/olimpiprofi?ysclid=lfcpwtzjis345760237)
+- [Олимпиада студентов и выпускников «Высшая лига»](https://vk.com/hse_liga?ysclid=lfcpxs0jh719297982)
 
 
 ## <a name="work"></a>Работа
