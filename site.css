@@ -1,0 +1,155 @@
+:root {
+    --background: #1C1C1E;
+    --background-secondary: #292929;
+    --background-tertiary: #2c2c2e;
+    --background-quaternary: #48484A;
+
+    --primary: #5E5CE6;
+
+    --text-primary: #e2e2e2;
+    --text-secondary: #e2e2e275;
+}
+
+.ac {
+  border: 1px solid var(--background-quaternary);
+  border-radius: 0.5rem !important;
+
+  padding: 0.25rem;
+
+  background-color: var(--background-secondary) !important;
+}
+
+.ac .ac-trigger {
+  font-family: 'Open Sans', sans-serif !important;
+
+  color: var(--text-primary) !important;
+  background-color: var(--background-secondary) !important;
+
+  border-radius: 0.5rem !important;
+}
+
+.ac .ac-panel .ac-text {
+    color: var(--text-secondary) !important;
+}
+
+*, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 620px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background-secondary);
+
+    padding: 2rem;
+    border-radius: 0.75rem;
+}
+
+hr {
+    border: none;
+    color: var(--text-secondary);
+    background-color: var(--text-secondary);
+
+    height: 1px;
+    border-radius: 1rem;
+
+    margin: 1.5rem 2rem;
+}
+
+.profile-card-body {
+    margin-top: 2.5rem;
+}
+
+.preview {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.preview-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    margin-left: 2rem;
+}
+
+.picture {
+    width: 8rem;
+    height: 8rem;
+
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+@media only screen and (max-device-width: 768px) {
+    .preview {
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .title, .subtitle {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 28px !important;
+    }
+
+    .subtitle {
+        font-size: 14px !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .preview-name {
+        align-items: center !important;
+        margin-left: 0 !important;
+
+        margin-top: 0.5rem;
+    }
+
+    .profile-card {
+        padding: 1.25em !important;
+    }
+
+    .profile-card-body {
+        margin-top: 1rem !important;
+    }
+
+    .wrapper {
+        padding: 0 1rem !important;
+    }
+
+    .ac .ac-trigger {
+        font-size: 14px !important;
+    }
+}
