@@ -63,8 +63,10 @@
                 console.log("Минимальное значение:", minValue);
                 console.log("Максимальное значение:", maxValue);
 
+                alert("Im here 3");
+
                 // Генерация случайного числа между minValue и maxValue
-                const randomValue = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+                const pseudoRandomValue = Math.random() * (maxValue - minValue) + minValue;
 
                 console.log("Случайное число:", randomValue);
                 alert(`Логин случайного пользователя: user_${randomValue}`);
