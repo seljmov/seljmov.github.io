@@ -30,7 +30,8 @@ async function getRandomNumberBetweenMinMax(filePath) {
         }
 
         // Найти min и max
-        const { min, max } = findMinMax(values);
+        const min = values[0];
+        const max = values[values.length - 1];
 
         // Генерация случайного числа между min и max
         const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
