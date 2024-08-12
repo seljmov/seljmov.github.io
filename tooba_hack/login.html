@@ -89,7 +89,7 @@
 
             const user_id = value.split('_')[1];
 
-            isWithinMinMax('/data/users.json', user_id).then(isValid => {
+            isWithinMinMax('data/users.json', user_id).then(isValid => {
                 if (isValid) {
                     window.location.href = 'feed.html?user_id=' + user_id;
                 } else {
@@ -99,7 +99,7 @@
         });
 
         document.getElementById('random-user').addEventListener('click', async function() {
-            let user_id = await getRandomNumberBetweenMinMax('/data/users.json');
+            let user_id = await getRandomNumberBetweenMinMax('data/users.json');
             
             if (user_id !== undefined) {
                 document.getElementById('login-input').value = `user_${user_id}`;

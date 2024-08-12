@@ -146,7 +146,7 @@
             }
 
             try {
-                const campaignsIds = await getCampaignsIds('/data/campaigns.json');
+                const campaignsIds = await getCampaignsIds('data/campaigns.json');
                 const campaignsIdsArray = Array.from(campaignsIds);
 
                 const filteredCampaignsIds = Object.keys(campaigns).filter(campaignId => campaignsIdsArray.includes(parseInt(campaignId)));
@@ -265,7 +265,7 @@
             }
 
             try {
-                const userGuid = await findUserIdByNumber('/data/users.json', userId);
+                const userGuid = await findUserIdByNumber('data/users.json', userId);
                 console.log("userGuid:", userGuid);
 
                 const url = `https://seljmov.pythonanywhere.com/predict?user_id=${userGuid}`;
@@ -281,7 +281,7 @@
                     const predictionArray = data.prediction;
                     console.log("Получены данные:", predictionArray);
 
-                    const campaigns = await getCampaignsByKeywords('/data/keywords.json', predictionArray);
+                    const campaigns = await getCampaignsByKeywords('data/keywords.json', predictionArray);
                     console.log("Кампании с ключевыми словами:", campaigns);
 
                     const result = await findCampaignWithMostKeywords(campaigns);
@@ -290,7 +290,7 @@
                     const uniqueCampaignsIds = Array.from(new Set(result.map(campaign => parseInt(campaign.campaign_id))));
                     console.log("Уникальные id кампаний:", uniqueCampaignsIds);
 
-                    const campaignDetails = await getCampaignsDetails('/data/campaigns.json', uniqueCampaignsIds);
+                    const campaignDetails = await getCampaignsDetails('data/campaigns.json', uniqueCampaignsIds);
                     console.log("Детали кампаний:", campaignDetails);
 
                     const first = uniqueCampaignsIds[0];
