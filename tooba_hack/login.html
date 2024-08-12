@@ -44,6 +44,11 @@
                 const data = await response.json();
                 const values = Object.values(data);
 
+                alert("Im here 1.5", values);
+
+                console.log("data:", data);
+                console.log("values:", values);
+
                 if (!values.length) {
                     alert("В JSON-данных нет значений.");
                     console.log("В JSON-данных нет значений.");
@@ -57,8 +62,8 @@
 
                 alert("Im here 2");
 
-                const minValue = Math.min(...values);
-                const maxValue = Math.max(...values);
+                const minValue = Math.min(Array.from(values));
+                const maxValue = Math.max(Array.from(values));
 
                 console.log("Минимальное значение:", minValue);
                 console.log("Максимальное значение:", maxValue);
