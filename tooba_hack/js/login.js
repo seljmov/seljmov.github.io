@@ -32,12 +32,8 @@ async function getRandomNumberBetweenMinMax(filePath) {
         // Найти min и max
         const { min, max } = findMinMax(values);
 
-        alert("Минимальное значение: " + min + "\nМаксимальное значение: " + max);
-
         // Генерация случайного числа между min и max
         const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
-
-        alert("Случайное число: " + randomValue);
 
         console.log("Случайное число: " + randomValue);
         return randomValue;
@@ -63,11 +59,10 @@ async function isWithinMinMax(filePath, number) {
             return false;
         }
 
-        const minValue = Math.min(...values);
-        const maxValue = Math.max(...values);
+        const { min, max } = findMinMax(values);
 
         // Проверяем, находится ли число в диапазоне
-        return number >= minValue && number <= maxValue;
+        return number >= min && number <= max;
     } catch (error) {
         console.error("Произошла ошибка:", error);
         return false;
