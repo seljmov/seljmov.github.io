@@ -28,7 +28,7 @@
 
     <script src="js/login.js"></script>
     <script>
-        document.getElementById('login').addEventListener('click', function() {
+        document.getElementById('login').addEventListener('click', async function() {
             const value = document.getElementById('login-input').value;
             if (value === '') {
                 alert('Введите логин');
@@ -36,14 +36,13 @@
             }
 
             const user_id = value.split('_')[1];
+            const isValid = await isWithinMinMax('data/users.json', user_id);
 
-            isWithinMinMax('data/users.json', user_id).then(isValid => {
-                if (isValid) {
-                    window.location.href = 'feed.html?user_id=' + user_id;
-                } else {
-                    alert('Пользователя с таким логином не существует');
-                }
-            });
+            if (isValid) {
+                window.location.href = `feed.html?user_id=${user_id}`;
+            } else {
+                alert('Пользователя с таким логином не существует');
+            }
         });
 
         document.getElementById('random-user').addEventListener('click', async function() {

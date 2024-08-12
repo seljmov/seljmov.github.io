@@ -29,30 +29,28 @@ async function getRandomNumberBetweenMinMax(filePath) {
     }
 }
 
-function isWithinMinMax(filePath, number) {
-    return fetch(filePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Ошибка загрузки файла: ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const values = Object.values(data);
+async function isWithinMinMax(filePath, number) {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error('Ошибка загрузки файла: ' + response.statusText);
+        }
 
-            if (values.length === 0) {
-                console.log("В JSON-данных нет значений.");
-                return false;
-            }
+        const data = await response.json();
+        const values = Object.values(data);
 
-            const minValue = Math.min(...values);
-            const maxValue = Math.max(...values);
-
-            // Проверяем, находится ли число в диапазоне
-            return number >= minValue && number <= maxValue;
-        })
-        .catch(error => {
-            console.error("Произошла ошибка:", error);
+        if (values.length === 0) {
+            console.log("В JSON-данных нет значений.");
             return false;
-        });
+        }
+
+        const minValue = Math.min(...values);
+        const maxValue = Math.max(...values);
+
+        // Проверяем, находится ли число в диапазоне
+        return number >= minValue && number <= maxValue;
+    } catch (error) {
+        console.error("Произошла ошибка:", error);
+        return false;
+    }
 }
