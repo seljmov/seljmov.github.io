@@ -41,6 +41,7 @@
                 const values = Object.values(data);
 
                 if (values.length === 0) {
+                    alert("В JSON-данных нет значений.");
                     console.log("В JSON-данных нет значений.");
                     return;
                 }
@@ -55,8 +56,10 @@
                 const randomValue = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 
                 console.log("Случайное число:", randomValue);
+                alert(`Логин случайного пользователя: user_${randomValue}`);
                 return randomValue;
             } catch (error) {
+                alert("Произошла ошибка: " + error);
                 console.error("Произошла ошибка:", error);
             }
         }
@@ -86,6 +89,7 @@
                 return false;
             }
         }
+
         document.getElementById('login').addEventListener('click', async function() {
             const value = document.getElementById('login-input').value;
             if (value === '') {
