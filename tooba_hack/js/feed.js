@@ -4,7 +4,7 @@ const generateCampaignCard = (campaign) => {
 
     const campaignTitle = document.createElement('h3');
     campaignTitle.classList.add('campaign-title');
-    campaignTitle.textContent = campaign.title + ' (' + campaign.id + ')';
+    campaignTitle.textContent = campaign.title;
 
     const campaignInfo = document.createElement('div');
     campaignInfo.classList.add('campaign-info');
