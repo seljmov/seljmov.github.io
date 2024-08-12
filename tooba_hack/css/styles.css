@@ -1,0 +1,191 @@
+:root {
+    --primary-color: #4fb07b;
+    --secondary-color: #6c757d;
+    --success-color: var(--primary-color);
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+
+    --primary-gradient: linear-gradient(to right, #42ddcd, #1acc6e);
+
+    --base-height: 42px;
+    --base-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.login-form {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 10%;
+}
+
+.logo {
+    width: 80%;
+    max-width: 400px;
+
+    margin-bottom: 40px;
+}
+
+.login-input {
+    width: 100%;
+    height: var(--base-height);
+
+    margin-bottom: 20px;
+    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--base-radius);
+}
+
+.login-input:focus {
+    outline: var(--primary-gradient);
+    border-color: var(--primary-gradient);
+}
+
+.login-button {
+    width: 100%;
+    height: var(--base-height);
+
+    border: none;
+    padding: 10px;
+    border-radius: var(--base-radius);
+    background-image: var(--primary-gradient);
+    color: #fff;
+    cursor: pointer;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.campaigns-list, .campaign-sublist {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.campaign-sublist {
+    display: none;
+}
+
+.campaign-sublist--visible {
+    display: flex;
+}
+
+.campaign-card {
+    width: 100%;
+    max-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    padding: 12px;
+    border-radius: var(--base-radius);
+    background-color: #fff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-card h3 {
+    margin-bottom: 1rem;
+}
+
+.campaign-info {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campaign-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+}
+
+.campaign-amount-goal-title, .campaign-amount-collected-title {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+
+    text-transform: lowercase;
+}
+
+.campaign-amount-goal-value, .campaign-amount-collected-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.campaign-amount-collected-value {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.campaign-amount-collected {
+    display: flex;    
+    flex-direction: column;
+    align-items: end;
+}
+
+.campaign-actions {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    gap: .5rem;
+}
+
+.campaign-actions button {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-image: var(--primary-gradient);
+    color: #fff;
+    cursor: pointer;
+}
+
+.campaign-share {
+    background-color: #daf6e7 !important;
+    background-image: none !important;
+    color: #374649 !important;
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        width: 100%;
+        padding-top: 20%;
+    }
+}
