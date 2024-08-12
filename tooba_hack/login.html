@@ -32,10 +32,14 @@
     <script>
         async function getRandomNumberBetweenMinMax(filePath) {
             try {
+
+                alert("Im here 0");
                 const response = await fetch(filePath);
                 if (!response.ok) {
                     throw new Error('Ошибка загрузки файла: ' + response.statusText);
                 }
+
+                alert("Im here 1");
 
                 const data = await response.json();
                 const values = Object.values(data);
@@ -50,6 +54,8 @@
                 if (!values.every(value => typeof value === 'number')) {
                     throw new Error('Некоторые значения не являются числами.');
                 }
+
+                alert("Im here 2");
 
                 const minValue = Math.min(...values);
                 const maxValue = Math.max(...values);
