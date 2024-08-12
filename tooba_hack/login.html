@@ -35,29 +35,42 @@
 
     <script src="js/login.js"></script>
     <script>
-        document.getElementById('login').addEventListener('click', async function() {
-            const value = document.getElementById('login-input').value;
-            if (value === '') {
-                alert('Введите логин');
-                return;
-            }
+        document.addEventListener('DOMContentLoaded', async function() {
+            document.getElementById('login').addEventListener('click', async function() {
+                const value = document.getElementById('login-input').value;
+                if (value === '') {
+                    alert('Введите логин');
+                    return;
+                }
 
-            const user_id = value.split('_')[1];
-            const isValid = await isWithinMinMax('data/users.json', user_id);
+                const user_id = value.split('_')[1];
+                const isValid = await isWithinMinMax('data/users.json', user_id);
 
-            if (isValid) {
-                window.location.href = `feed.html?user_id=${user_id}`;
-            } else {
-                alert('Пользователя с таким логином не существует');
-            }
-        });
+                if (isValid) {
+                    window.location.href = `feed.html?user_id=${user_id}`;
+                } else {
+                    alert('Пользователя с таким логином не существует');
+                }
+            });
 
-        document.getElementById('random-user').addEventListener('click', async function() {
-            let user_id = await getRandomNumberBetweenMinMax('data/users.json');
-            
-            if (user_id !== undefined) {
-                document.getElementById('login-input').value = `user_${user_id}`;
-            }
+            const randomUser = document.getElementById('random-user');
+            randomUser.addEventListener('click', async function() {
+                randomUser.disabled = true;
+                const text = randomUser.textContent;
+                const background = randomUser.style.backgroundImage;
+                randomUser.textContent = 'Загрузка...';
+                randomUser.style.background = 'gray';
+
+                let user_id = await getRandomNumberBetweenMinMax('data/users.json');
+                
+                if (user_id !== undefined) {
+                    document.getElementById('login-input').value = `user_${user_id}`;
+                }
+
+                randomUser.disabled = false;
+                randomUser.textContent = text;
+                randomUser.style.backgroundImage = background;
+            });
         });
     </script>
 </body>
