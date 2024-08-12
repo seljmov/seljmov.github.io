@@ -1,3 +1,15 @@
+function findMinMax(values) {
+    let min = Infinity;
+    let max = -Infinity;
+
+    for (const value of values) {
+        if (value < min) min = value;
+        if (value > max) max = value;
+    }
+
+    return { min, max };
+}
+
 async function getRandomNumberBetweenMinMax(filePath) {
     try {
         const response = await fetch(filePath);
@@ -13,27 +25,27 @@ async function getRandomNumberBetweenMinMax(filePath) {
             return;
         }
 
-        // Убедимся, что все значения в массиве - числа
         if (!values.every(value => typeof value === 'number')) {
             throw new Error('Некоторые значения не являются числами.');
         }
 
-        const minValue = Math.min(Array.from(values));
-        const maxValue = Math.max(Array.from(values));
+        // Найти min и max
+        const { min, max } = findMinMax(values);
 
-        console.log("Минимальное значение:", minValue);
-        console.log("Максимальное значение:", maxValue);
+        alert("Минимальное значение: " + min);
+        alert("Максимальное значение: " + max);
 
-        // Генерация случайного числа между minValue и maxValue
-        const pseudoRandomValue = Math.random() * (maxValue - minValue) + minValue;
+        // Генерация случайного числа между min и max
+        const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
 
-        console.log("Случайное число:", pseudoRandomValue);
-        return pseudoRandomValue;
+        console.log("Случайное число: " + randomValue);
+        return randomValue;
     } catch (error) {
         alert("Произошла ошибка: " + error.message);
         console.error("Произошла ошибка:", error);
     }
 }
+
 
 async function isWithinMinMax(filePath, number) {
     try {
