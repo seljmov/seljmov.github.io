@@ -40,10 +40,15 @@
                 const data = await response.json();
                 const values = Object.values(data);
 
-                if (values.length === 0) {
+                if (!values.length) {
                     alert("В JSON-данных нет значений.");
                     console.log("В JSON-данных нет значений.");
                     return;
+                }
+
+                // Убедимся, что все значения в массиве - числа
+                if (!values.every(value => typeof value === 'number')) {
+                    throw new Error('Некоторые значения не являются числами.');
                 }
 
                 const minValue = Math.min(...values);
@@ -59,7 +64,7 @@
                 alert(`Логин случайного пользователя: user_${randomValue}`);
                 return randomValue;
             } catch (error) {
-                alert("Произошла ошибка: " + error);
+                alert("Произошла ошибка: " + error.message);
                 console.error("Произошла ошибка:", error);
             }
         }
