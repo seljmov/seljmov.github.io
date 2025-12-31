@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Викторина</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="container header">
+        <div>
+            <h1>Викторина</h1>
+        </div>
+        <nav class="nav">
+            <button class="link" id="navStart">Старт</button>
+            <button class="link" id="navLeaderboard">Таблица</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- START -->
+        <section id="screenStart" class="card">
+            <h2>Начать игру</h2>
+
+            <div class="grid">
+                <label class="field">
+                    <span>Имя игрока</span>
+                    <input id="playerName" type="text" placeholder="Например: Хадижа" maxlength="32" />
+                </label>
+
+                <label class="field">
+                    <span>Тема</span>
+                    <select id="topicSelect">
+                        <option value="">Загрузка тем…</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span>Сколько вопросов пройти</span>
+                    <select id="questionCount">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <div class="row" style="margin-bottom: 1rem;">
+                <button id="btnStart" class="primary">Старт</button>
+                <button id="btnStartLeaderboard">Посмотреть таблицу</button>
+            </div>
+
+            <p id="startError" class="error hidden"></p>
+            <p id="startHint" class="muted small"></p>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="screenQuiz" class="card hidden">
+            <div class="row space">
+                <div>
+                    <h2 id="quizTitle">Вопрос</h2>
+                    <p class="muted" id="quizProgress">—</p>
+                </div>
+                <button id="btnQuit">Выйти</button>
+            </div>
+
+            <div class="question">
+                <p id="questionText" class="questionText"></p>
+                <div id="optionsList" class="options"></div>
+            </div>
+
+            <p id="quizError" class="error hidden"></p>
+
+            <div class="row" style="justify-content: end;">
+                <button id="btnNext" class="primary">Далее</button>
+            </div>
+        </section>
+
+        <!-- RESULT -->
+        <section id="screenResult" class="card hidden">
+            <h2>Результат</h2>
+            <p id="resultSummary" class="big"></p>
+
+            <div class="row">
+                <button id="btnPlayAgain" class="primary">Сыграть ещё</button>
+                <button id="btnToLeaderboard">Таблица результатов</button>
+            </div>
+
+            <details class="details">
+                <summary>Показать разбор</summary>
+                <div id="resultBreakdown" class="breakdown"></div>
+            </details>
+        </section>
+
+        <!-- LEADERBOARD -->
+        <section id="screenLeaderboard" class="card hidden">
+            <div class="row space">
+                <div>
+                    <h2>Таблица результатов</h2>
+                </div>
+                <button id="btnClear" class="danger">Очистить</button>
+            </div>
+
+            <div class="row">
+                <label class="field inline" style="margin-bottom: 1rem;">
+                    <span>Фильтр по теме</span>
+                    <select id="leaderTopicFilter">
+                        <option value="">Все темы</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="tableWrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Игрок</th>
+                            <th>Тема</th>
+                            <th>Результат</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderRows"></tbody>
+                </table>
+            </div>
+
+            <p id="leaderEmpty" class="muted hidden">Пока пусто. Самое время устроить первую победу.</p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
