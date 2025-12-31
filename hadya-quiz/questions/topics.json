@@ -1,7 +1,7 @@
 [
-  { "id": "harrypotter", "title": "Гарри Поттер", "file": "/questions/harrypotter.json" },
-  { "id": "cards13", "title": "13 карт", "file": "/questions/cards13.json" },
-  { "id": "sonic", "title": "Соник", "file": "/questions/sonic.json" },
-  { "id": "dostoevsky", "title": "Вселенная Достоевского", "file": "/questions/dostoevsky.json" },
-  { "id": "17_moments_spring", "title": "17 мгновений весны", "file": "/questions/17_moments_spring.json" }
+  { "id": "harrypotter", "title": "Гарри Поттер", "file": "questions/harrypotter.json" },
+  { "id": "cards13", "title": "13 карт", "file": "questions/cards13.json" },
+  { "id": "sonic", "title": "Соник", "file": "questions/sonic.json" },
+  { "id": "dostoevsky", "title": "Вселенная Достоевского", "file": "questions/dostoevsky.json" },
+  { "id": "17_moments_spring", "title": "17 мгновений весны", "file": "questions/17_moments_spring.json" }
 ]
