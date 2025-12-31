@@ -119,7 +119,7 @@ async function init() {
     wireEvents();
 
     try {
-        state.topics = await loadJson("/questions/topics.json");
+        state.topics = await loadJson("questions/topics.json");
         fillTopics(state.topics);
         ui.startHint.textContent = `Тем загружено: ${state.topics.length}.`;
     } catch (e) {
